@@ -35,8 +35,8 @@ LIGHTYELLOW = (175, 175,  20)
 
 BORDERCOLOR = BLUE
 BGCOLOR = BLACK
-TEXTCOLOR = WHITE
-TEXTSHADOWCOLOR = GRAY
+TEXTCOLOR = YELLOW
+TEXTSHADOWCOLOR = YELLOW
 COLORS      = (     BLUE,      GREEN,      RED,      YELLOW)
 LIGHTCOLORS = (LIGHTBLUE, LIGHTGREEN, LIGHTRED, LIGHTYELLOW)
 assert len(COLORS) == len(LIGHTCOLORS) # each color must have light color
@@ -204,7 +204,7 @@ def runGame():
     nextPiece = getNewPiece()
 
     while True: # game loop
-       playTime = int(time.time() - startTime)  # playTime을 초 단위로 계산
+        playTime = int(time.time() - startTime)  # playTime을 초 단위로 계산
         if fallingPiece == None:
             fallingPiece = nextPiece
             nextPiece = getNewPiece()
@@ -336,7 +336,7 @@ def showTextScreen(text):
     # This function displays large text in the
     # center of the screen until a key is pressed.
     # Draw the text drop shadow
-    DISPLAYSURF.fill(YELLOW)
+    DISPLAYSURF.fill(BGCOLOR)  # 배경색을 검정색으로 설정합니다.
     titleSurf, titleRect = makeTextObjs(text, BIGFONT, YELLOW)
     titleRect.center = (int(WINDOWWIDTH / 2), int(WINDOWHEIGHT / 2))
     DISPLAYSURF.blit(titleSurf, titleRect)
